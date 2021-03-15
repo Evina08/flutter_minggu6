@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_minggu5/models/item.dart';
+import 'package:flutter_minggu5/pages/item_page.dart';
 
 class HomePage extends StatelessWidget {
   final List<Item> items = [
@@ -17,19 +18,28 @@ class HomePage extends StatelessWidget {
         itemCount: items.length,
         itemBuilder: (context, index) {
           final item = items[index];
-          return Card(
-            child: Container(
-              margin: EdgeInsets.all(8),
-              child: Row(
-                children: [
-                  Expanded(child: Text(item.name)),
-                  Expanded(
-                    child: Text(
-                      item.price.toString(),
-                      textAlign: TextAlign.end,
-                    ),
-                  )
-                ],
+          return InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => ItemPage(tempItem: item)),
+              );
+            },
+            child: Card(
+              child: Container(
+                margin: EdgeInsets.all(8),
+                child: Row(
+                  children: [
+                    Expanded(child: Text(item.name)),
+                    Expanded(
+                      child: Text(
+                        item.price.toString(),
+                        textAlign: TextAlign.end,
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           );
