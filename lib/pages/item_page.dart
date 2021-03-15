@@ -6,5 +6,16 @@ class ItemPage extends StatelessWidget {
 
   ItemPage({Key key, this.tempItem}) : super(key: key);
   @override
-  Widget build(BuildContext context) {}
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Container(
+          alignment: Alignment.center,
+          child: Text(
+            tempItem.name + ";" + tempItem.price.toString(),
+          ),
+        ),
+      ),
+    );
+  }
 }

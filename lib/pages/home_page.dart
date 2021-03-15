@@ -9,42 +9,52 @@ class HomePage extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    home:
-    Scaffold(
+    return MaterialApp(
+      title: '',
+      theme: ThemeData(
+        primarySwatch: Colors.teal,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Konverter Suhu"),
+        ),
         body: Container(
-      margin: EdgeInsets.all(8),
-      child: ListView.builder(
-        padding: EdgeInsets.all(8),
-        itemCount: items.length,
-        itemBuilder: (context, index) {
-          final item = items[index];
-          return InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => ItemPage(tempItem: item)),
+          margin: EdgeInsets.all(8),
+          child: ListView.builder(
+            padding: EdgeInsets.all(8),
+            itemCount: items.length,
+            itemBuilder: (context, index) {
+              final item = items[index];
+              return InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ItemPage(tempItem: item)),
+                  );
+                },
+                child: Card(
+                  child: Container(
+                    margin: EdgeInsets.all(8),
+                    child: Row(
+                      children: [
+                        Expanded(child: Text(item.name)),
+                        Expanded(
+                          child: Text(
+                            item.price.toString(),
+                            textAlign: TextAlign.end,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
               );
             },
-            child: Card(
-              child: Container(
-                margin: EdgeInsets.all(8),
-                child: Row(
-                  children: [
-                    Expanded(child: Text(item.name)),
-                    Expanded(
-                      child: Text(
-                        item.price.toString(),
-                        textAlign: TextAlign.end,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          );
-        },
+          ),
+        ),
       ),
-    ));
+    );
   }
 }
