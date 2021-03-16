@@ -4,20 +4,29 @@ import 'package:flutter_minggu5/pages/item_page.dart';
 
 class HomePage extends StatelessWidget {
   final List<Item> items = [
-    Item(name: 'Sugar', price: 5000),
-    Item(name: 'Salt', price: 2000)
+    Item(
+        name: 'Bear Brown Sugar',
+        price: 90000,
+        image: 'assets/bearmaroon.jpg',
+        stok: 10),
+    Item(
+        name: 'Cute Panda',
+        price: 130000,
+        image: 'assets/bearwhite.jpg',
+        stok: 12),
+    Item(name: 'Stitch Blue', price: 70000, image: 'assets/stitch.jpg', stok: 8)
   ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '',
+      title: 'Happy Shop!',
       theme: ThemeData(
-        primarySwatch: Colors.teal,
+        primarySwatch: Colors.pink,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Konverter Suhu"),
+          title: Text("Boo Shop"),
         ),
         body: Container(
           margin: EdgeInsets.all(8),
@@ -34,22 +43,51 @@ class HomePage extends StatelessWidget {
                         builder: (context) => ItemPage(tempItem: item)),
                   );
                 },
-                child: Card(
-                  child: Container(
-                    margin: EdgeInsets.all(8),
-                    child: Row(
-                      children: [
-                        Expanded(child: Text(item.name)),
-                        Expanded(
-                          child: Text(
-                            item.price.toString(),
-                            textAlign: TextAlign.end,
-                          ),
-                        )
-                      ],
-                    ),
+                child: Container(
+                  margin: EdgeInsets.all(8),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Image(
+                          image: AssetImage(item.image),
+                          fit: BoxFit.cover,
+                          width: 70.0,
+                          height: 350.0,
+                        ),
+                      ),
+                      Expanded(
+                        child: Image(
+                          image: AssetImage(item.image),
+                          fit: BoxFit.cover,
+                          width: 70.0,
+                          height: 350.0,
+                        ),
+                      )
+                    ],
                   ),
                 ),
+                // child: Image(
+                //   image: AssetImage(item.image),
+                //   fit: BoxFit.cover,
+                //   width: 70.0,
+                //   height: 105.0,
+                // ),
+                // child: Card(
+                //   child: Container(
+                //     margin: EdgeInsets.all(8),
+                //     child: Row(
+                //       children: [
+                //         Expanded(child: Text(item.name)),
+                //         Expanded(
+                //           child: Text(
+                //             item.price.toString(),
+                //             textAlign: TextAlign.end,
+                //           ),
+                //         )
+                //       ],
+                //     ),
+                //   ),
+                // ),
               );
             },
           ),
