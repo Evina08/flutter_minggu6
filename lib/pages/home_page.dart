@@ -43,6 +43,7 @@ class HomePage extends StatelessWidget {
                         builder: (context) => ItemPage(tempItem: item)),
                   );
                 },
+
                 child: Container(
                   margin: EdgeInsets.all(8),
                   child: Row(
@@ -56,11 +57,9 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       Expanded(
-                        child: Image(
-                          image: AssetImage(item.image),
-                          fit: BoxFit.cover,
-                          width: 70.0,
-                          height: 350.0,
+                        child: Text(
+                          item.name,
+                          style: TextStyle(fontSize: 27, color: Colors.pink),
                         ),
                       )
                     ],
