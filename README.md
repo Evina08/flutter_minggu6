@@ -1,16 +1,13 @@
-# flutter_minggu5
+# Minggu ke-6
 
-A new Flutter project.
 
-## Getting Started
+- Nama : Evina Dinda Syawalia
+- Kelas : MI-2B
+- NIM : 1931710072
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+- ![gambar 1](image/img1.jpg)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- ![gambar 2](image/img2.jpg)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- ![gambar 3](image/img3.jpg)
